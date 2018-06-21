@@ -1,0 +1,434 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    background-color: #EFEFEF;
+    width: 100%;
+    height: 100%;
+}
+
+#wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.centerText { text-align: center; }
+
+.centerElem {
+    margin: 0 auto;
+}
+
+button:focus { outline: 0; }
+
+button:hover { 
+    cursor: pointer;
+    background-color: rgb(75, 74, 74) !important;
+    color: white !important;
+}
+
+/* ==========
+    header 
+===========*/
+
+#header {
+    background-color: #245A7E;
+    color: white;
+}
+
+#header span {
+    float: right;
+    margin-right: 1em;
+}
+
+/* ==========
+    navbar 
+===========*/
+#navbar {
+    background-color: white;
+    display: inline-block;
+    position: absolute; /* allow navbar to fill remaining space */
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li a { 
+    text-decoration: none; 
+    display: block; /* make entire line clickable as link */
+    color: black;
+}
+
+a:visited { color:black; }
+
+.active {
+    background-color: #0D2B45;
+    color: white !important;
+}
+
+#navTop { position: relative; }
+
+#picAndImg {  /* center vertically and horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#picAndImg img {
+    display: block;
+    border-radius: 50%;
+}
+
+#picAndImg p { margin-bottom: 0; }
+
+/* middle portion of navbar */
+#navMid { height: 20%; }
+
+#navMid li a, #bottom li a { padding: 0.5em 1em 0.5em 1em; }
+
+/* each menu item in middle section */
+.myProfile i { margin-right: 0.9em; }
+
+.connections i { margin-right: 0.7em; }
+
+.newConnection i { margin-right: 0.5em; }
+
+.messages i { margin-right: 0.6em; }
+
+.groups i { margin-right: 0.5em; }
+
+/* bottom section of navbar */
+#bottom {
+    width: 100%;
+    border-top: 1px solid lightgrey;
+    padding-top: 1em;
+    margin-top: 1em;
+}
+
+.settings i, .logout i { margin-right: 0.7em; }
+
+#bottom li:first-child {
+    margin-top: 1em;
+}
+
+/* =================
+    page content 
+==================*/
+
+h1 {
+    font-weight: normal;
+    margin-top: 1em;
+}
+
+ /* box with profile image and "Edit Profile" button */
+#profile {
+    box-shadow: 0 0 15px 1px #a5a4a4;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 2em;
+    padding: 2em 0 2em 0;
+    width: 55%;
+}
+
+
+#profile img {
+    display: block;
+    border-radius: 50%;
+}
+
+#profile button {
+    display: block;
+    background-color: rgb(151, 150, 150);
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    padding: 0.7em;
+    margin-top: 3em;
+}
+
+.btnGroup {
+    margin: 0 auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.btnGroup button {
+    border: 1px solid #245A7E;
+    background-color: transparent;
+    padding: 1em;
+    color: #245A7E;
+    float: left;
+}
+
+/* clear floats */
+.btnGroup:after {
+    content: "";
+    clear: both; 
+    display: table;
+}
+
+/* rounded corners just for first button in group */
+.btnGroup button:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+/* rounded corners just for last button in group */
+.btnGroup button:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* prevents border overlap */
+.btnGroup button:not(:last-child) {
+    border-right: none;
+}
+
+.btnGroup button.active {
+    background-color: #245A7E;
+    color: white;
+}
+
+/* table icons */
+.borderBottom i { font-size: 25pt; }
+
+/* =======================
+    for large screens
+======================= */
+@media only screen and (min-width: 1024px) {
+    body { font-size: 0.9vw; }
+
+    li a:hover { 
+        background-color: rgb(151, 150, 150);
+    }
+
+    #content { float: right;}
+    
+    #header { height: 50px; }
+
+    .hamburgerMenu, #mobileNavbar { display: none; }
+    
+    #header span {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        font-size: 14pt;
+    }
+
+    #navbar {
+        width: 23%;
+        top: 50px;
+    }
+
+    #navTop { min-height: 20%; }
+
+    #picAndImg img { width: 50%; }
+
+    #bottom { position: relative; height: 50%; }
+
+    li a.logout { position: absolute; bottom: 0; }
+
+    #content { 
+        width: 80%; 
+        float: right;
+        vertical-align: top;
+    }
+
+    #profile img {
+        width: 35%;
+    }
+
+    #profile button {
+        font-size: 12pt;
+        width: 27%; 
+    }
+
+    .btnGroup { width: 55%; }
+
+    .btnGroup button {
+        width: 33.3%;
+        font-size: 12pt;
+    }
+
+    table {
+        background-color: #245A7E;
+        color: white;
+        border-collapse: collapse;
+        width: 55%;
+    }
+
+    td, th {
+        width: 33.3%;
+        padding: 1em;
+        border-right: 1px solid white;
+        text-align: center;
+        font-size: 1vw;
+    }
+
+    #contactInfoForMobiles { display: none; }
+}
+
+/* =======================
+    for medium screens
+======================= */
+@media only screen and (min-width: 701px) and (max-width: 1023px) {
+    #content {
+        float: right; 
+        vertical-align: top;
+    }
+
+    li a:hover { 
+        background-color: rgb(151, 150, 150);
+    }
+
+    body { font-size: 10pt; }
+
+    #header { height: 40px; }
+
+    .hamburgerMenu, #mobileNavbar { display: none; }
+
+    #header span {
+        padding-top: 11px;
+        padding-bottom: 11px;
+        font-size: 12pt;
+    }
+
+    #navbar {
+        width: 27%;
+        top: 40px;
+    }
+
+    #navTop { min-height: 15%; }
+
+    #picAndImg img { width: 85px; }
+
+    #bottom { position: relative; height: 50%; }
+    
+    #bottom li:last-child { margin-top: 460px; }
+
+    li a.logout { position: absolute; bottom: 0; }
+
+    #content { 
+        width: 69%; 
+        padding: 1em; 
+        float: right;
+        vertical-align: top;
+    }
+
+    #profile { width: 80%; }
+
+    #profile img { width: 200px; }
+
+    #profile button { 
+        font-size: 11pt;
+        width: 35%; 
+    }
+
+    .btnGroup { width: 80%; }
+
+    .btnGroup button { 
+        width: 33.3%;
+        font-size: 11pt;
+    }
+
+    table {
+        background-color: #245A7E;
+        width: 80%;
+        color: white;
+        border-collapse: collapse;
+        font-size: 1.5vw;
+    }
+
+    td, th {
+        width: 33.3%;
+        padding: 1em;
+        border-right: 1px solid white;
+        text-align: center;
+    }
+
+    #contactInfoForMobiles { display: none; }
+}
+
+/* =======================
+    for small screens
+======================= */
+@media only screen and (max-width: 700px) {
+    body { font-size: 10pt; }
+
+    #header { height: 30px; }
+
+    .hamburgerMenu {
+        color: white;
+        background-color: #245A7E;
+        border: 0;
+        font-size: 13pt;
+        margin: 2px 0 0 0.5em;
+    }
+
+    #header span {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 11pt;
+    }
+
+    #navbar {
+        position: static;
+        width: 100%;
+    }
+
+    #navTop { display: none; }
+
+
+    
+    /* #bottom { border-top: none; background-color: white;} */
+
+    #content { width: 100%; }
+
+    #profile, .btnGroup, .cell { width: 90%; }
+
+    #profile button { 
+        font-size: 10pt;
+        width: 35%; 
+    }
+
+    #profile img {
+        width: 30%;
+    }
+
+    .btnGroup button { 
+        width: 33.3%;
+        font-size: 2vw;
+    }
+
+    table { display: none; }
+
+    #contactInfoForMobiles { background-color: red; width: 90%; margin: 0 auto;}
+
+    .cell {
+        margin: 0 auto;
+        padding: 1em 0 1em 0;
+        width: 100%;
+        background-color: #245A7E;
+        color: white;
+        border-bottom: 1px solid white;
+    }
+
+    .cell:last-child { border-bottom: none; }
+
+    .cell i {
+        font-size: 20pt;
+        display: block;
+        margin: 0 auto;
+    }
+}
