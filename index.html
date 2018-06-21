@@ -89,6 +89,7 @@
     <script>
             $(document).ready(function() {
                 var screenWidth = $(window).width();
+                var isHidden;
                 
                 // prevent navbar from showing if page is refreshed
                 if ($(window).width() <= 700) {
@@ -103,14 +104,23 @@
 
                     if ($(window).width() <= 700) {
                         $("#navbar").hide();
+                        isHidden = true;
                     } else {
                         $("#navbar").show();
+                        isHidden = false;
                     }
                 });
 
 
                 $(".hamburgerMenu").click(function() {
                     $("#navbar").slideToggle("slow");
+
+                    if (isHidden == true) { /* if menu is hidden */
+                        isHidden = false;
+                        $("#content").css("padding-bottom", "2em"); /* add padding to bottom of page */
+                    } else {
+                        isHidden = true;
+                    }
                 });
 
 
